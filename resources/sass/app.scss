@@ -1,0 +1,196 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+.h6{
+  font-size: 10px;
+}
+.navbar-laravel {
+  background-color: #ff0000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.createCaptainContainer {  
+  width: 82%;
+  margin-right: auto;
+  margin-left: auto; 
+  margin-top: 0%;
+  padding-left: 30px;
+}
+
+.jumbotron {
+  text-align: center;
+  width: 82%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0%;
+  height:162px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+.form-block {
+  width: 10%;
+  margin-top: 15px;
+}
+
+.form-input {
+  width: 90%;
+  margin-right: 30px;
+  margin-top: 15px;
+}
+
+.form-input input {
+  width: 100%;
+}
+
+.submitCaptain{
+  margin: 20px;
+  margin-left: 0px;
+}
+
+.showCaptainContainer{
+  width: 82%;
+  margin-right: auto;
+  margin-left: auto; 
+  margin-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.allCaptains{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+
+.captainBoxes{
+  width: 48%;
+ 
+}
+
+.scheduleCaptainContainer {
+  width: 82%;
+  margin-right: auto;
+  margin-left: auto; 
+  margin-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.captainColours{
+  margin-left: 3px;
+}
+
+.containerBlock {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.calenderContent {
+  width: 50%;
+}
+
+//calendar
+#content {
+  margin: 0;
+  position: absolute;
+  margin-right: -50%;
+
+  border: 2px solid black;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.button-style {
+  font-family: "Inconsolata", monospace;
+  background-color: #e0f7fa;
+  border-radius: 4px;
+  color: black;
+  border: 1px solid #e0f7fa;
+  padding: 10px 24px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.button-style:hover {
+  background-color: #26c6da;
+  color: white;
+}
+
+#previous {
+  float: left;
+  padding-top: 10px;
+}
+
+#next {
+  float: right;
+  padding-top: 10px;
+}
+
+.resultMonthAndYear {
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  line-height: 40px;
+  background-color: #e0f7fa;
+}
+
+th {
+  font-family: "Inconsolata", monospace;
+  border: 1px solid black;
+  background-color: #00acc1;
+  color: #ffffff;
+}
+
+td {
+  font-family: "Inconsolata", monospace;
+  border: 1px solid black;
+  text-align: center;
+  padding: 24px;
+  width: 25px;
+}
+
+.currentDay {
+  background-color: #F15C5C;
+  color: #fff;
+}
+
+.currentDay:hover {
+  background-color: rgb(189, 105, 105);
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  margin-top: -5px;
+  margin-left: -8px;
+  line-height: 29px;
+  font-size: 23px;
+}
+
+.calendar
+{
+float:left;
+}
+
+.calenderContent{
+  border-right: 5px solid black;
+}

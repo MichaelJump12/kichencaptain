@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Schedule;
+use App\Captain;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('captains.index');
+        return view('home');
     }
 }

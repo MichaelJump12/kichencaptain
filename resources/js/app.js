@@ -66,6 +66,7 @@ let monthsNames = [
     calendar.appendChild(days);
   
     content.appendChild(calendar);
+
   }
   
   function getCurrentDay() {
@@ -121,7 +122,8 @@ let monthsNames = [
   
     let lastRow = createLastRow(lastMonday, monthName, currentDay);
     tbody.appendChild(lastRow);
-  
+
+
     return tbody;
   }
   
@@ -198,7 +200,7 @@ let monthsNames = [
       g_currentMonth = 12;
       g_currentYear--;
     }
-    g_startDay = (new Date(g_currentYear, g_currentMonth, 1).getDay() + 6) % 7;;
+    g_startDay = (new Date(g_currentYear, g_currentMonth, 1).getDay() + 6) % 7;
     showCalendar(g_currentMonth, g_currentYear, g_startDay);
     setDates(g_currentMonth);
     setYear(g_currentYear);
@@ -227,7 +229,7 @@ let monthsNames = [
 
   const scheduleTitles = document.querySelectorAll('[data-schedule-for]');
   const calendar = document.getElementById('calendar_id');
-  
+
   const setDates = (month) => {
   
     [...scheduleTitles].forEach(function(el) {
@@ -244,8 +246,9 @@ let monthsNames = [
             dayElement.style.backgroundColor = color;
           }
         }
-    });  
-  };
+    
+    }); 
+    };
 
 
 

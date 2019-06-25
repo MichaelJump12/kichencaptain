@@ -1,62 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends ('../layouts/layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
 
-<body>
-    <div class="jumbotron">
+@section ('pageTitle')
+All current captains
+@endsection
 
-        <h1>List of kitchen captains</h1>
-        <div style="text-align: left;"><a href="../home"> logout </a></div>
+
+
+@section ('content')
+
+@if ($errors->any())
+    <div class="alert alert-danger" style ="margin-left: 10.5%;">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
-    <div class="showCaptainContainer">
+@endif
 
+    <div class="showCaptainContainer">
+        <br><br>
         <div class="allCaptains">
             @foreach($captains as $captain)
-            <div class="captainBoxes">
-                Captain name:
-                <br>
-                {{ $captain->fullname() }}
+            <div class="card" style="width:49%; padding:8px;">
+                <div class="captainBoxes">
+                    Captain name:
+                    <br>
+                    {{ $captain->fullname() }}
 
-                @if ($captain->schedules)
-                    @foreach($captain->schedules as $schedule) 
-                        <h6 id="ScheduleJS" style="background-color: {{ $captain->colour }}"> week they are captain:
-                        <br>{{ $schedule->week_start }} </h6>         
+                    @if ($captain->schedules)
+                    @foreach($captain->schedules as $schedule)
+                    <h5 id="ScheduleJS"
+                        style="padding:2px; font-size:23px; font-weight: bold; margin:0px; background-color: {{ $captain->colour }}">
+                        Week they are captain:</h5>
+                    <h6 id="ScheduleJS"
+                        style="margin: 0px; margin-bottom:3px; line-height: 61.9%; padding-bottom:8px; background-color: {{ $captain->colour }}">
+                        <br>{{ $schedule->week_start }} </h6>
                     @endforeach
-                @endif
-
+                    @endif
+                </div>
             </div>
 
             @endforeach
-      
+
         </div>
-        <hr>  
+        <hr>
 
 
 
 
         <!-- {{ $captains->random()->first_name }} -->
-      
-        
-        </div>
-        <center>
-            <a href="/captains/create">Click to create a new Kitchen Captain!</a> <br>
-            <a href="/schedule"> see the captains schedule </a>
-        </center>
-        @if ($errors->has('schedule'))
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $errors->first('schedule') }}</strong>
-        </span>
-        @endif
 
 
     </div>
-</body>
+    <center>
 
-</html>
+    </center>
+    @if ($errors->has('schedule'))
+    <span class="invalid-feedback" role="alert">
+        <strong>{{ $errors->first('schedule') }}</strong>
+    </span>
+    @endif
+
+@endsection

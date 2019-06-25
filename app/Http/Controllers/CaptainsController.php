@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Schedule;
 use App\Captain;
 use Carbon;
@@ -10,12 +11,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class CaptainsController extends Controller
-{
-
+class CaptainsController extends Controller {
     public function index() 
     {
-        
         return view('captains.index', [
             'captains' => Captain::all(),
             'schedules' => Schedule::all()
@@ -36,17 +34,19 @@ class CaptainsController extends Controller
 
         if ($validator->fails()) {
             return redirect('/captains')
-                ->withErrors($validator,'captains')
-                ->withInput();
+            ->withErrors('The colour has to be unique');    
+            // ->withErrors($validator,'captains')
+                // ->withInput();
 
         } else {
-        Captain::create(request([
-            'first_name',
-            'last_name',
-            'colour',
-            'nickname'
-        ]));
-        return redirect('/captains');
+            Captain::create(request([
+                'first_name',
+                'last_name',
+                'colour',
+                'nickname'
+            ]));
+
+            return redirect('/captains');
         }
 
     }

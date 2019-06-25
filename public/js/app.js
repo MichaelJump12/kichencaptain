@@ -36769,7 +36769,6 @@ var previous = function previous() {
   }
 
   g_startDay = (new Date(g_currentYear, g_currentMonth, 1).getDay() + 6) % 7;
-  ;
   showCalendar(g_currentMonth, g_currentYear, g_startDay);
   setDates(g_currentMonth);
   setYear(g_currentYear);

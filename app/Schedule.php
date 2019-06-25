@@ -16,5 +16,13 @@ class Schedule extends Model
     {
         return $this->belongsTo('App\Captain');
     }
+
+    public function getStartOfWeekAttribute() {
+        return $this->week_start->startOFWeek();
+    }
+
+    public function getEndOfWeekAttribute() {
+        return $this->week_start->endOfWeek();
+    }
   
 }

@@ -18,4 +18,8 @@ class Captain extends Model
         return $this->first_name . ' ' . $this->last_name;
     }
 
+    public function upcomingSchedules() {
+        return $this->schedules->where('end_of_week', '>=', now());
+    }
+
 }
